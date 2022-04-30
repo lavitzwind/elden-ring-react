@@ -32,7 +32,7 @@ const Wrapper = styled.div`
 const Img = styled.img`
   position: absolute;
   z-index: 1;
-  top: 350px;
+  top: 440px;
   left: 0;
   right: 0;
   bottom: 0;
