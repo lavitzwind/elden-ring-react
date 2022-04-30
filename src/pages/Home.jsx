@@ -175,7 +175,7 @@ const Home = () => {
         <source src="assets/bg.webm" type="video/webm" />
       </VideoContainer>
       <Wrapper>
-        <Img src="assets/logo.webp" alt="logo" />
+      <Img src="assets/logo.webp" alt="logo" />
         <Btn onClick={() => setOpen(!open)}>The Game</Btn>
       </Wrapper>
       <TheGameOverlay
