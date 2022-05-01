@@ -46,10 +46,10 @@ const Header = () => {
   return (
     <Container>
       <Video autoPlay loop muted>
-        <source src="assets/bg.webm" type="video/webm" />
+        <source src="/assets/bg.webm" type="video/webm" />
       </Video>
       <Wrapper>
-        <Img src="assets/logo.webp" alt="logo" />
+        <Img src="/assets/logo.webp" alt="logo" />
       </Wrapper>
     </Container>
   );

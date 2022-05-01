@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +23,9 @@ const Container = styled.div`
 const ClassCard = ({ item }) => {
   return (
     <Container>
-      <img src={item.image} alt={item.name} />
+      <Link to={`/classes/${item.id}`}>
+        <img src={item.image} alt={item.name} />
+      </Link>
     </Container>
   );
 };
