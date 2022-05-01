@@ -158,7 +158,6 @@ const Text = styled.h3`
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 2s ease;
     background: #000;
     opacity: 0.3;
     content: "";
@@ -175,7 +174,7 @@ const Home = () => {
         <source src="assets/bg.webm" type="video/webm" />
       </VideoContainer>
       <Wrapper>
-      <Img src="assets/logo.webp" alt="logo" />
+        <Img src="assets/logo.webp" alt="logo" />
         <Btn onClick={() => setOpen(!open)}>The Game</Btn>
       </Wrapper>
       <TheGameOverlay

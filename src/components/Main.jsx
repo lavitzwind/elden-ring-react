@@ -81,14 +81,40 @@ const LeftSection = styled.div`
     font-size: 1.2rem;
     text-shadow: 0 0 10px #000;
   }
+  p:last-child {
+    font-weight: bold;
+  }
 `;
 
-const RightSection = styled.video`
+const RightSection = styled.div`
+  position: relative;
   width: 60%;
   margin-top: 30px;
+  display: flex;
+
+  img {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+
+  img:last-child {
+    top: auto;
+    bottom: -20px;
+    left: 320px;
+    margin: auto;
+  }
+`;
+
+const VideoContainer = styled.video`
+  position: relative;
   object-fit: cover;
   object-position: center;
   border-radius: 5px;
+  width: 100%;
 `;
 
 const Main = () => {
@@ -135,8 +161,12 @@ const Main = () => {
             </p>
             <p>And become the Elden Lord.</p>
           </LeftSection>
-          <RightSection autoPlay loop muted>
-            <source src="assets/trailer.webm" type="video/webm" />
+          <RightSection>
+            <VideoContainer autoPlay loop muted>
+              <source src="assets/trailer.webm" type="video/webm" />
+            </VideoContainer>
+            <img src="assets/border.png" alt="border" />
+            <img src="assets/border.png" alt="border" />
           </RightSection>
         </ContainerSection>
       </Wrapper>
