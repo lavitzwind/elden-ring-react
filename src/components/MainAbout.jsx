@@ -25,7 +25,7 @@ const InnerTitle = styled.div`
   align-items: center;
 `;
 
-const Title = styled.div`
+const Title = styled.h1`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -117,7 +117,7 @@ const VideoContainer = styled.video`
   width: 100%;
 `;
 
-const Main = () => {
+const MainAbout = () => {
   return (
     <Container>
       <Wrapper>
@@ -174,4 +174,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MainAbout;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   position: relative;
@@ -193,20 +194,28 @@ const Home = () => {
         <Inner>
           <UnorderedList>
             <ListItem>
-              <Img2 src="assets/about.jpg" alt="about" />
-              <Text>ABOUT</Text>
+              <Link to="/about">
+                <Img2 src="assets/about.jpg" alt="about" />
+                <Text>ABOUT</Text>
+              </Link>
             </ListItem>
             <ListItem>
-              <Img2 src="assets/classes.jpg" alt="classes" />
-              <Text>CLASSES</Text>
+              <Link to="/classes">
+                <Img2 src="assets/classes.jpg" alt="classes" />
+                <Text>CLASSES</Text>
+              </Link>
             </ListItem>
             <ListItem>
-              <Img2 src="assets/locations.jpg" alt="locations" />
-              <Text>LOCATIONS</Text>
+              <Link to="/locations">
+                <Img2 src="assets/locations.jpg" alt="locations" />
+                <Text>LOCATIONS</Text>
+              </Link>
             </ListItem>
             <ListItem>
-              <Img2 src="assets/bosses.jpg" alt="bosses" />
-              <Text>BOSSES</Text>
+              <Link to="/bosses">
+                <Img2 src="assets/bosses.jpg" alt="bosses" />
+                <Text>BOSSES</Text>
+              </Link>
             </ListItem>
           </UnorderedList>
         </Inner>
