@@ -55,7 +55,11 @@ const MainClasses = () => {
       const URL = "https://eldenring.fanapis.com/api/classes";
       try {
         const res = await axios.get(URL);
-        setClasses(res.data.data);
+        setClasses(
+          res.data.data.filter((elem, index, self) => {
+            return index === self.findIndex((t) => t.name === elem.name);
+          })
+        );
       } catch (err) {
         console.log(err);
       }
