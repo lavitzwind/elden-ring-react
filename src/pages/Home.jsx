@@ -153,14 +153,9 @@ const Text = styled.h3`
   text-transform: uppercase;
   text-align: center;
 
-  &:before {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+  &:hover {
     background: #000;
-    opacity: 0.3;
+    opacity: 0.5;
     content: "";
     cursor: pointer;
   }
