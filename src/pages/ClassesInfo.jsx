@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import Header from "../components/Header";
+import Class from "../components/Class";
 
 const Container = styled.div`
+  overflow: hidden;
   width: 100vw;
-  height: 150vh;
+  height: 155vh;
   background-color: rgba(0, 0, 0, 1);
   background-blend-mode: overlay;
   background-size: cover;
@@ -45,6 +47,7 @@ const ClassesInfo = () => {
         <InnerTitle>
           <Title>Elden Ring - Classes</Title>
         </InnerTitle>
+        <Class />
       </Wrapper>
     </Container>
   );

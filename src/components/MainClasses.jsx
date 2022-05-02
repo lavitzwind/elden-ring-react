@@ -5,7 +5,7 @@ import ClassCard from "./ClassCard";
 
 const Container = styled.div`
   width: 100vw;
-  height: 210vh;
+  height: 215vh;
   background-color: rgba(0, 0, 0, 1);
   background-blend-mode: overlay;
   background-size: cover;
@@ -66,8 +66,6 @@ const MainClasses = () => {
     };
     getClasses();
   }, []);
-
-  console.log(classes);
 
   return (
     <Container>
