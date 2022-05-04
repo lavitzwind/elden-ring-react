@@ -121,45 +121,53 @@ const UnorderedList = styled.ul`
 `;
 
 const ListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  max-height: 400px;
+  border-radius: 4px;
   overflow: hidden;
-  width: 25%;
-  height: 50%;
+  box-shadow: 0 1.4px 1.7px rgb(0 0 0 / 2%), 0 3.3px 4px rgb(0 0 0 / 2%),
+    0 6.3px 7.5px rgb(0 0 0 / 3%), 0 11.2px 13.4px rgb(0 0 0 / 4%),
+    0 20.9px 25.1px rgb(0 0 0 / 4%), 0 50px 60px rgb(0 0 0 / 6%);
 
   img {
+    position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 2s, filter 1.5s ease-in-out;
-    transform-origin: center center;
-    filter: brightness(100%);
-
-    &:hover {
-      filter: brightness(30%);
-      transform: scale(1.3);
-      cursor: pointer;
-    }
+    z-index: 1;
+    transition: all 0.9s ease-in-out;
   }
 
   h3 {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    top: 50%;
+    transform: translate3d(0, -40px, 40px);
     text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 0;
+    letter-spacing: 5px;
+    position: absolute;
+    color: #fff;
+    z-index: 1;
+    max-width: 200px;
+    transition: opacity 0.2s, transform 0.3s;
+  }
 
-    &:hover {
-      background: #000;
-      opacity: 0.5;
-      content: "";
-      cursor: pointer;
-      transform: translate(-50%, -50%) scale(1.1);
-      transition: transform 1s, filter 1.5s ease-in-out;
-    }
+  &:hover img {
+    transition: all 0.9s ease-in-out;
+    filter: brightness(30%);
+    transform: scale(1.3);
+    cursor: pointer;
+  }
+
+  &:hover h3 {
+    transition: all 0.9s ease-in-out;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
   }
 `;
 
@@ -191,25 +199,57 @@ const Home = () => {
         <Inner>
           <UnorderedList>
             <ListItem>
-              <Link to="/about">
+              <Link
+                to="/about"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textDecoration: "none",
+                }}
+              >
                 <img src="assets/about.jpg" alt="about" />
                 <h3>ABOUT</h3>
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/classes">
+              <Link
+                to="/classes"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textDecoration: "none",
+                }}
+              >
                 <img src="assets/classes.jpg" alt="classes" />
                 <h3>CLASSES</h3>
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/locations">
+              <Link
+                to="/locations"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textDecoration: "none",
+                }}
+              >
                 <img src="assets/locations.jpg" alt="locations" />
                 <h3>LOCATIONS</h3>
               </Link>
             </ListItem>
             <ListItem>
-              <Link to="/bosses">
+              <Link
+                to="/bosses"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textDecoration: "none",
+                }}
+              >
                 <img src="assets/bosses.jpg" alt="bosses" />
                 <h3>BOSSES</h3>
               </Link>
