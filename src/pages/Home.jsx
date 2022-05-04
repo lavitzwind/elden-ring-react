@@ -125,39 +125,41 @@ const ListItem = styled.li`
   overflow: hidden;
   width: 25%;
   height: 50%;
-`;
 
-const Img2 = styled.img`
-  width: 100%;
-  height: 100%;
-  transition: transform 2s, filter 1.5s ease-in-out;
-  transform-origin: center center;
-  filter: brightness(100%);
+  img {
+    width: 100%;
+    height: 100%;
+    transition: transform 2s, filter 1.5s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(100%);
 
-  &:hover {
-    filter: brightness(30%);
-    transform: scale(1.3);
-    cursor: pointer;
+    &:hover {
+      filter: brightness(30%);
+      transform: scale(1.3);
+      cursor: pointer;
+    }
   }
-`;
 
-const Text = styled.h3`
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-align: center;
+  h3 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
 
-  &:hover {
-    background: #000;
-    opacity: 0.5;
-    content: "";
-    cursor: pointer;
+    &:hover {
+      background: #000;
+      opacity: 0.5;
+      content: "";
+      cursor: pointer;
+      transform: translate(-50%, -50%) scale(1.1);
+      transition: transform 1s, filter 1.5s ease-in-out;
+    }
   }
 `;
 
@@ -190,26 +192,26 @@ const Home = () => {
           <UnorderedList>
             <ListItem>
               <Link to="/about">
-                <Img2 src="assets/about.jpg" alt="about" />
-                <Text>ABOUT</Text>
+                <img src="assets/about.jpg" alt="about" />
+                <h3>ABOUT</h3>
               </Link>
             </ListItem>
             <ListItem>
               <Link to="/classes">
-                <Img2 src="assets/classes.jpg" alt="classes" />
-                <Text>CLASSES</Text>
+                <img src="assets/classes.jpg" alt="classes" />
+                <h3>CLASSES</h3>
               </Link>
             </ListItem>
             <ListItem>
               <Link to="/locations">
-                <Img2 src="assets/locations.jpg" alt="locations" />
-                <Text>LOCATIONS</Text>
+                <img src="assets/locations.jpg" alt="locations" />
+                <h3>LOCATIONS</h3>
               </Link>
             </ListItem>
             <ListItem>
               <Link to="/bosses">
-                <Img2 src="assets/bosses.jpg" alt="bosses" />
-                <Text>BOSSES</Text>
+                <img src="assets/bosses.jpg" alt="bosses" />
+                <h3>BOSSES</h3>
               </Link>
             </ListItem>
           </UnorderedList>
