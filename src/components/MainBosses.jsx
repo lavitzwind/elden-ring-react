@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import LocationsCard from "./LocationsCard";
+import BossesCard from "./BossesCard";
 
 const Container = styled.div`
   width: 100vw;
@@ -70,16 +70,16 @@ const DotContainer = styled.div`
   }
 `;
 
-const MainLocations = () => {
-  const [locations, setLocations] = useState([]);
+const MainBosses = () => {
+  const [bosses, setBosses] = useState([]);
   const [dotActive, setDotActive] = useState(0);
 
   useEffect(() => {
     const getLocations = async () => {
-      const URL = "https://eldenring.fanapis.com/api/locations?limit=20";
+      const URL = "https://eldenring.fanapis.com/api/bosses?limit=20";
       try {
         const res = await axios.get(URL);
-        setLocations(res.data.data);
+        setBosses(res.data.data);
       } catch (err) {
         console.log(err);
       }
@@ -88,10 +88,10 @@ const MainLocations = () => {
   }, []);
 
   const getLocationByIndex = async (index) => {
-    const URL = `https://eldenring.fanapis.com/api/locations?&page=${index}`;
+    const URL = `https://eldenring.fanapis.com/api/bosses?&page=${index}`;
     try {
       const res = await axios.get(URL);
-      setLocations(res.data.data);
+      setBosses(res.data.data);
     } catch (err) {
       console.log(err);
     }
@@ -102,17 +102,15 @@ const MainLocations = () => {
     getLocationByIndex(index);
   };
 
-  console.log(locations);
-
   return (
     <Container>
       <Wrapper>
         <InnerTitle>
-          <Title>Elden Ring - Locations</Title>
+          <Title>Elden Ring - Bosses</Title>
         </InnerTitle>
         <InnerSection>
-          {locations.map((location) => (
-            <LocationsCard item={location} />
+          {bosses.map((bosses) => (
+            <BossesCard item={bosses} />
           ))}
         </InnerSection>
         <DotContainer>
@@ -176,40 +174,10 @@ const MainLocations = () => {
             }}
             onClick={() => handleDotClick(5)}
           ></span>
-          <span
-            style={{
-              backgroundColor:
-                dotActive === 6
-                  ? "rgba(221, 96, 96, 1)"
-                  : "rgba(221, 96, 96, 0.4)",
-              transform: dotActive === 6 ? "scale(1.2)" : "scale(1)",
-            }}
-            onClick={() => handleDotClick(6)}
-          ></span>
-          <span
-            style={{
-              backgroundColor:
-                dotActive === 7
-                  ? "rgba(221, 96, 96, 1)"
-                  : "rgba(221, 96, 96, 0.4)",
-              transform: dotActive === 7 ? "scale(1.2)" : "scale(1)",
-            }}
-            onClick={() => handleDotClick(7)}
-          ></span>
-          <span
-            style={{
-              backgroundColor:
-                dotActive === 8
-                  ? "rgba(221, 96, 96, 1)"
-                  : "rgba(221, 96, 96, 0.4)",
-              transform: dotActive === 8 ? "scale(1.2)" : "scale(1)",
-            }}
-            onClick={() => handleDotClick(8)}
-          ></span>
         </DotContainer>
       </Wrapper>
     </Container>
   );
 };
 
-export default MainLocations;
+export default MainBosses;

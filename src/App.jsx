@@ -4,6 +4,8 @@ import Classes from "./pages/Classes";
 import ClassesInfo from "./pages/ClassesInfo";
 import Locations from "./pages/Locations";
 import LocationsInfo from "./pages/LocationsInfo";
+import Bosses from "./pages/Bosses";
+import BossesInfo from "./pages/BossesInfo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Route path="classes/:id" element={<ClassesInfo />} />
           <Route path="locations" element={<Locations />} />
           <Route path="locations/:id" element={<LocationsInfo />} />
+          <Route path="Bosses" element={<Bosses />} />
+          <Route path="Bosses/:id" element={<BossesInfo />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   position: relative;
@@ -39,6 +40,11 @@ const Img = styled.img`
   margin: auto;
   max-width: 100%;
   height: auto;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.3);
+  }
 }
 `;
 
@@ -49,7 +55,9 @@ const Header = () => {
         <source src="/assets/bg.webm" type="video/webm" />
       </Video>
       <Wrapper>
-        <Img src="/assets/logo.webp" alt="logo" />
+        <Link to="/">
+          <Img src="/assets/logo.webp" alt="logo" />
+        </Link>
       </Wrapper>
     </Container>
   );
