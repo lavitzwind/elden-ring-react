@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Header from "../components/Header";
+import HeaderInfo from "../components/HeaderInfo";
 import Class from "../components/Class";
 
 const Container = styled.div`
@@ -43,7 +43,7 @@ const ClassesInfo = () => {
   return (
     <Container>
       <Wrapper>
-        <Header />
+        <HeaderInfo />
         <InnerTitle>
           <Title>Elden Ring - Classes</Title>
         </InnerTitle>

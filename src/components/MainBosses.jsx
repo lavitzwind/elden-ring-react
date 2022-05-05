@@ -73,13 +73,16 @@ const DotContainer = styled.div`
 const MainBosses = () => {
   const [bosses, setBosses] = useState([]);
   const [dotActive, setDotActive] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getLocations = async () => {
       const URL = "https://eldenring.fanapis.com/api/bosses?limit=20";
       try {
+        setLoading(true);
         const res = await axios.get(URL);
         setBosses(res.data.data);
+        setLoading(false);
       } catch (err) {
         console.log(err);
       }
@@ -104,78 +107,94 @@ const MainBosses = () => {
 
   return (
     <Container>
-      <Wrapper>
-        <InnerTitle>
-          <Title>Elden Ring - Bosses</Title>
-        </InnerTitle>
-        <InnerSection>
-          {bosses.map((bosses) => (
-            <BossesCard item={bosses} />
-          ))}
-        </InnerSection>
-        <DotContainer>
-          <span
-            style={{
-              backgroundColor:
-                dotActive === 0
-                  ? "rgba(221, 96, 96, 1)"
-                  : "rgba(221, 96, 96, 0.4)",
-              transform: dotActive === 0 ? "scale(1.2)" : "scale(1)",
-            }}
-            onClick={() => handleDotClick(0)}
-          ></span>
-          <span
-            style={{
-              backgroundColor:
-                dotActive === 1
-                  ? "rgba(221, 96, 96, 1)"
-                  : "rgba(221, 96, 96, 0.4)",
-              transform: dotActive === 1 ? "scale(1.2)" : "scale(1)",
-            }}
-            onClick={() => handleDotClick(1)}
-          ></span>
-          <span
-            style={{
-              backgroundColor:
-                dotActive === 2
-                  ? "rgba(221, 96, 96, 1)"
-                  : "rgba(221, 96, 96, 0.4)",
-              transform: dotActive === 2 ? "scale(1.2)" : "scale(1)",
-            }}
-            onClick={() => handleDotClick(2)}
-          ></span>
-          <span
-            style={{
-              backgroundColor:
-                dotActive === 3
-                  ? "rgba(221, 96, 96, 1)"
-                  : "rgba(221, 96, 96, 0.4)",
-              transform: dotActive === 3 ? "scale(1.2)" : "scale(1)",
-            }}
-            onClick={() => handleDotClick(3)}
-          ></span>
-          <span
-            style={{
-              backgroundColor:
-                dotActive === 4
-                  ? "rgba(221, 96, 96, 1)"
-                  : "rgba(221, 96, 96, 0.4)",
-              transform: dotActive === 4 ? "scale(1.2)" : "scale(1)",
-            }}
-            onClick={() => handleDotClick(4)}
-          ></span>
-          <span
-            style={{
-              backgroundColor:
-                dotActive === 5
-                  ? "rgba(221, 96, 96, 1)"
-                  : "rgba(221, 96, 96, 0.4)",
-              transform: dotActive === 5 ? "scale(1.2)" : "scale(1)",
-            }}
-            onClick={() => handleDotClick(5)}
-          ></span>
-        </DotContainer>
-      </Wrapper>
+      {loading ? (
+        <div
+          style={{
+            marginTop: "3%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "#fff",
+            fontSize: "3rem",
+          }}
+        >
+          Loading...
+        </div>
+      ) : (
+        <Wrapper>
+          <InnerTitle>
+            <Title>Elden Ring - Bosses</Title>
+          </InnerTitle>
+          <InnerSection>
+            {bosses.map((bosses) => (
+              <BossesCard item={bosses} />
+            ))}
+          </InnerSection>
+          <DotContainer>
+            <span
+              style={{
+                backgroundColor:
+                  dotActive === 0
+                    ? "rgba(221, 96, 96, 1)"
+                    : "rgba(221, 96, 96, 0.4)",
+                transform: dotActive === 0 ? "scale(1.2)" : "scale(1)",
+              }}
+              onClick={() => handleDotClick(0)}
+            ></span>
+            <span
+              style={{
+                backgroundColor:
+                  dotActive === 1
+                    ? "rgba(221, 96, 96, 1)"
+                    : "rgba(221, 96, 96, 0.4)",
+                transform: dotActive === 1 ? "scale(1.2)" : "scale(1)",
+              }}
+              onClick={() => handleDotClick(1)}
+            ></span>
+            <span
+              style={{
+                backgroundColor:
+                  dotActive === 2
+                    ? "rgba(221, 96, 96, 1)"
+                    : "rgba(221, 96, 96, 0.4)",
+                transform: dotActive === 2 ? "scale(1.2)" : "scale(1)",
+              }}
+              onClick={() => handleDotClick(2)}
+            ></span>
+            <span
+              style={{
+                backgroundColor:
+                  dotActive === 3
+                    ? "rgba(221, 96, 96, 1)"
+                    : "rgba(221, 96, 96, 0.4)",
+                transform: dotActive === 3 ? "scale(1.2)" : "scale(1)",
+              }}
+              onClick={() => handleDotClick(3)}
+            ></span>
+            <span
+              style={{
+                backgroundColor:
+                  dotActive === 4
+                    ? "rgba(221, 96, 96, 1)"
+                    : "rgba(221, 96, 96, 0.4)",
+                transform: dotActive === 4 ? "scale(1.2)" : "scale(1)",
+              }}
+              onClick={() => handleDotClick(4)}
+            ></span>
+            <span
+              style={{
+                backgroundColor:
+                  dotActive === 5
+                    ? "rgba(221, 96, 96, 1)"
+                    : "rgba(221, 96, 96, 0.4)",
+                transform: dotActive === 5 ? "scale(1.2)" : "scale(1)",
+              }}
+              onClick={() => handleDotClick(5)}
+            ></span>
+          </DotContainer>
+        </Wrapper>
+      )}
     </Container>
   );
 };

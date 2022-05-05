@@ -49,17 +49,20 @@ const InnerSection = styled.div`
 
 const MainClasses = () => {
   const [classes, setClasses] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getClasses = async () => {
       const URL = "https://eldenring.fanapis.com/api/classes";
       try {
+        setLoading(true);
         const res = await axios.get(URL);
         setClasses(
           res.data.data.filter((elem, index, self) => {
             return index === self.findIndex((t) => t.name === elem.name);
           })
         );
+        setLoading(false);
       } catch (err) {
         console.log(err);
       }
@@ -69,16 +72,32 @@ const MainClasses = () => {
 
   return (
     <Container>
-      <Wrapper>
-        <InnerTitle>
-          <Title>Elden Ring - Classes</Title>
-        </InnerTitle>
-        <InnerSection>
-          {classes.map((item) => (
-            <ClassCard key={item.id} item={item} />
-          ))}
-        </InnerSection>
-      </Wrapper>
+      {loading ? (
+        <div
+          style={{
+            marginTop: "3%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "#fff",
+            fontSize: "3rem",
+          }}
+        >
+          Loading...
+        </div>
+      ) : (
+        <Wrapper>
+          <InnerTitle>
+            <Title>Elden Ring - Classes</Title>
+          </InnerTitle>
+          <InnerSection>
+            {classes.map((item) => (
+              <ClassCard key={item.id} item={item} />
+            ))}
+          </InnerSection>
+        </Wrapper>
+      )}
     </Container>
   );
 };

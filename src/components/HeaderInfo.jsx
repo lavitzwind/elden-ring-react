@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   position: relative;
@@ -30,15 +31,13 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.img`
+const Img = styled.img`
   position: absolute;
   z-index: 1;
-  top: 440px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0;
+  left: calc(50px + 1vw);
   margin: auto;
-  max-width: 100%;
+  max-width: 10%;
   height: auto;
 
   &:hover {
@@ -71,6 +70,8 @@ const Arrow = styled.img`
 `;
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Video autoPlay loop muted>
@@ -78,11 +79,13 @@ const Header = () => {
       </Video>
       <Wrapper>
         <Link to="/">
-          <Logo src="/assets/logo.webp" alt="logo" />
+          <Img src="/assets/logo.webp" alt="logo" />
         </Link>
-        <Link to="..">
-          <Arrow src="/assets/left-arrow.svg" alt="left-arrow" />
-        </Link>
+        <Arrow
+          onClick={() => navigate(-1)}
+          src="/assets/left-arrow.svg"
+          alt="left-arrow"
+        />
       </Wrapper>
     </Container>
   );

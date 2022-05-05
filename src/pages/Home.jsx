@@ -44,14 +44,12 @@ const Img = styled.img`
 
 const Btn = styled.div`
   color: white;
-  -webkit-text-decoration: none;
   text-decoration: none;
   letter-spacing: 2px;
   font-size: 18px;
   border: 2px solid #ffffff55;
   text-align: center;
   padding: 24px 50px;
-  -webkit-transition: all 0.35s;
   transition: all 0.35s;
   border-radius: 15px;
   z-index: 1;
