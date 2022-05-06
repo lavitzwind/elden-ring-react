@@ -5,7 +5,7 @@ import Location from "../components/Location";
 const Container = styled.div`
   overflow: hidden;
   width: 100vw;
-  height: 140vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 1);
   background-blend-mode: overlay;
   background-size: cover;

@@ -26,7 +26,7 @@ export const tablet = (props) => {
 
 export const desktop = (props) => {
   return css`
-    @media only screen and (max-width: 1400px) {
+    @media only screen and (max-width: 1200px) {
       ${props}
     }
   `;

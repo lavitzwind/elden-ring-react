@@ -1,15 +1,22 @@
 import styled from "styled-components";
+import { desktop, tablet } from "../responsive";
 
 const Container = styled.div`
   overflow: hidden;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: overlay;
   background-image: url("assets/mainBG.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  ${desktop({
+    height: "auto",
+  })}
+  ${tablet({
+    height: "auto",
+  })}
 `;
 
 const Wrapper = styled.div`
@@ -36,6 +43,9 @@ const Title = styled.h1`
   margin-top: 5%;
   text-shadow: 0 0 10px #000;
   text-transform: uppercase;
+  ${tablet({
+    marginTop: "10%",
+  })}
 `;
 
 const Info = styled.div`
@@ -60,6 +70,12 @@ const ContainerSection = styled.div`
   height: 100%;
   margin-top: 50px;
   gap: 50px;
+  ${tablet({
+    alignItems: "center",
+    flexDirection: "column-reverse",
+    marginTop: "0px",
+    justifyContent: "flex-end",
+  })}
 `;
 
 const LeftSection = styled.div`
@@ -68,8 +84,15 @@ const LeftSection = styled.div`
   justify-content: center;
   align-items: flex-start;
   width: 40%;
-
   text-align: left;
+  ${tablet({
+    width: "100%",
+    textAlign: "center",
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+    marginTop: "-10px",
+  })}
+
   h2 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -89,24 +112,16 @@ const LeftSection = styled.div`
 const RightSection = styled.div`
   position: relative;
   width: 60%;
-  margin-top: 30px;
-  display: flex;
-
-  img {
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    width: 100%;
-    height: auto;
-    margin: auto;
-  }
-
-  img:last-child {
-    top: auto;
-    bottom: -20px;
-    left: 320px;
-    margin: auto;
-  }
+  height: auto;
+  margin: 30px;
+  display: block;
+  ${desktop({
+    width: "80%",
+  })}
+  ${tablet({
+    width: "100%",
+    marginTop: "20px",
+  })}
 `;
 
 const VideoContainer = styled.video`
@@ -115,6 +130,22 @@ const VideoContainer = styled.video`
   object-position: center;
   border-radius: 5px;
   width: 100%;
+`;
+
+const ImageContainer = styled.img`
+  position: absolute;
+  top: calc(-4% + 0px);
+  left: 0px;
+  width: 100%;
+  height: auto;
+`;
+
+const ImageContainer2 = styled.img`
+  position: absolute;
+  bottom: calc(-3% + 0px);
+  right: calc(-30% - 50px);
+  width: 100%;
+  height: auto;
 `;
 
 const MainAbout = () => {
@@ -165,8 +196,8 @@ const MainAbout = () => {
             <VideoContainer autoPlay loop muted>
               <source src="assets/trailer.webm" type="video/webm" />
             </VideoContainer>
-            <img src="assets/border.png" alt="border" />
-            <img src="assets/border.png" alt="border" />
+            <ImageContainer src="assets/border.png" alt="border" />
+            <ImageContainer2 src="assets/border.png" alt="border" />
           </RightSection>
         </ContainerSection>
       </Wrapper>

@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import LocationsCard from "./LocationsCard";
+import { tablet, mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
-  height: 185vh;
+  height: auto;
   background-color: rgba(0, 0, 0, 1);
   background-blend-mode: overlay;
   background-size: cover;
@@ -17,6 +18,7 @@ const Wrapper = styled.div`
   max-width: 100%;
   margin: 0 auto;
   height: 100%;
+  background-color: rgba(0, 0, 0, 1);
 `;
 
 const InnerTitle = styled.div`
@@ -34,9 +36,13 @@ const Title = styled.div`
   font-size: 3rem;
   font-weight: bold;
   color: #fff;
-  margin-top: 3%;
+  margin-top: 8%;
   text-shadow: 0 0 10px #000;
   text-transform: uppercase;
+  text-align: center;
+  ${tablet({
+    fontSize: "2.5rem",
+  })}
 `;
 
 const InnerSection = styled.div`
@@ -45,6 +51,21 @@ const InnerSection = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  -webkit-overflow-scrolling: touch;
+  ${tablet({
+    flexWrap: "nowrap",
+    overflowX: "auto",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    padding: "0 50px",
+    width: "90%",
+  })}
+  ${mobile({
+    width: "80%",
+    margin: "30px 0",
+  })}
 `;
 
 const DotContainer = styled.div`
@@ -53,7 +74,7 @@ const DotContainer = styled.div`
   align-items: center;
   width: auto;
   height: auto;
-  margin-top: 30px;
+  margin: 50px 0;
 
   span {
     cursor: pointer;
@@ -114,13 +135,16 @@ const MainLocations = () => {
       {loading ? (
         <div
           style={{
-            marginTop: "3%",
+            marginTop: "10%",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             alignItems: "center",
             color: "#fff",
             fontSize: "3rem",
+            backgroundColor: "rgba(0, 0, 0, 1)",
+            width: "100%",
+            height: "100vh",
           }}
         >
           Loading...

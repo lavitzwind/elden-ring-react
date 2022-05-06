@@ -4,6 +4,8 @@ import MainAbout from "../components/MainAbout";
 
 const Container = styled.div`
   overflow: hidden;
+  width: 100vw;
+  height: 100%;
 `;
 
 const About = () => {

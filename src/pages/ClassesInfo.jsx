@@ -5,7 +5,7 @@ import Class from "../components/Class";
 const Container = styled.div`
   overflow: hidden;
   width: 100vw;
-  height: 155vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 1);
   background-blend-mode: overlay;
   background-size: cover;

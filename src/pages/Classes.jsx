@@ -13,7 +13,6 @@ const Classes = () => {
   return (
     <Container>
       <Header />
-
       <MainClasses />
     </Container>
   );

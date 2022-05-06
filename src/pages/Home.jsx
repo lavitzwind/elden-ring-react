@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import { Link } from "react-router-dom";
+import { desktop, tablet, mobile } from "../responsive";
 
 const Container = styled.div`
   position: relative;
@@ -107,6 +108,9 @@ const Inner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${tablet({
+    maxWidth: "100%",
+  })}
 `;
 
 const UnorderedList = styled.ul`
@@ -116,6 +120,11 @@ const UnorderedList = styled.ul`
   align-items: center;
   overflow: hidden;
   gap: 30px;
+  padding: 0;
+  ${tablet({
+    padding: "0px 20px",
+    flexWrap: "wrap",
+  })}
 `;
 
 const ListItem = styled.li`
@@ -130,6 +139,9 @@ const ListItem = styled.li`
   box-shadow: 0 1.4px 1.7px rgb(0 0 0 / 2%), 0 3.3px 4px rgb(0 0 0 / 2%),
     0 6.3px 7.5px rgb(0 0 0 / 3%), 0 11.2px 13.4px rgb(0 0 0 / 4%),
     0 20.9px 25.1px rgb(0 0 0 / 4%), 0 50px 60px rgb(0 0 0 / 6%);
+  ${tablet({
+    maxWidth: "45%",
+  })}
 
   img {
     position: relative;
@@ -152,6 +164,12 @@ const ListItem = styled.li`
     z-index: 1;
     max-width: 200px;
     transition: opacity 0.2s, transform 0.3s;
+    ${desktop({
+      fontSize: "2rem",
+    })}
+    ${mobile({
+      fontSize: "1.2rem",
+    })}
   }
 
   &:hover img {
