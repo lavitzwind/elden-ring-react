@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import axios from "axios";
+import { tablet, mobile } from "../responsive";
 
 const Container = styled.div`
   max-width: 100%;
@@ -19,12 +20,16 @@ const UpperSection = styled.div`
   flex-direction: column;
   width: 70%;
   height: 70%;
+  text-align: center;
 
   h2 {
     color: #fff;
     z-index: 1;
     font-size: 2.5rem;
     margin-bottom: 20px;
+    ${tablet({
+      fontSize: "2rem",
+    })}
   }
 `;
 
@@ -34,10 +39,16 @@ const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${tablet({
+    width: "100%",
+  })}
 
   img {
     width: 100%;
     max-height: 400px;
+    ${mobile({
+      width: "130%",
+    })}
   }
 `;
 
@@ -48,6 +59,16 @@ const LowerSection = styled.div`
   align-items: center;
   flex-direction: column;
   width: 40%;
+  text-align: center;
+  height: 30%;
+  margin-top: 20px;
+  ${tablet({
+    width: "100%",
+    marginBottom: "120px",
+  })}
+  ${mobile({
+    marginBottom: "110px",
+  })} 
 
   h3 {
     font-size: 1.5rem;

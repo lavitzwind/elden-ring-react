@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import axios from "axios";
+import { tablet } from "../responsive";
 
 const Container = styled.div`
   max-width: 100%;
@@ -11,15 +12,23 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  ${tablet({
+    flexDirection: "column",
+    maxWidth: "90%",
+  })}
 `;
 
 const LeftSection = styled.div`
   width: 70%;
-  height: 800px;
+  height: 600px;
   padding-left: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  ${tablet({
+    height: "500px",
+    paddingLeft: "0px",
+  })}
 `;
 
 const ImgContainer = styled.div`
@@ -29,6 +38,9 @@ const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${tablet({
+    height: "100%",
+  })}
 
   img {
     position: absolute;
@@ -50,6 +62,11 @@ const RightSection = styled.div`
   color: #fff;
   background-color: #000;
   padding: 0 100px;
+  ${tablet({
+    justifyContent: "flex-start",
+    alignItems: "center",
+    textAlign: "center",
+  })}
 
   h1 {
     font-size: 2.5rem;
@@ -70,6 +87,7 @@ const Stats = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 70%;
+  flex-wrap: wrap;
 `;
 
 const VideoContainer = styled.div`

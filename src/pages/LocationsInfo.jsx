@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import HeaderInfo from "../components/HeaderInfo";
 import Location from "../components/Location";
+import { tablet, mobile } from "../responsive";
 
 const Container = styled.div`
   overflow: hidden;
@@ -24,6 +25,12 @@ const InnerTitle = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${tablet({
+    marginTop: "50px",
+  })}
+  ${mobile({
+    marginTop: "50px",
+  })}
 `;
 
 const Title = styled.div`
@@ -34,9 +41,16 @@ const Title = styled.div`
   font-size: 3rem;
   font-weight: bold;
   color: #fff;
-  margin-top: 3%;
+  margin-top: 8%;
   text-shadow: 0 0 10px #000;
   text-transform: uppercase;
+  text-align: center;
+  ${tablet({
+    fontSize: "2.5rem",
+  })}
+  ${mobile({
+    fontSize: "2rem",
+  })}
 `;
 
 const LocationsInfo = () => {

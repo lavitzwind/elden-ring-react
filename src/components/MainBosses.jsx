@@ -8,10 +8,6 @@ const Container = styled.div`
   width: 100vw;
   height: auto;
   background-color: rgba(0, 0, 0, 1);
-  background-blend-mode: overlay;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 `;
 
 const Wrapper = styled.div`
@@ -26,6 +22,12 @@ const InnerTitle = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${tablet({
+    marginTop: "100px",
+  })}
+  ${mobile({
+    marginTop: "100px",
+  })}
 `;
 
 const Title = styled.div`
@@ -39,8 +41,12 @@ const Title = styled.div`
   margin-top: 8%;
   text-shadow: 0 0 10px #000;
   text-transform: uppercase;
+  text-align: center;
   ${tablet({
     fontSize: "2.5rem",
+  })}
+  ${mobile({
+    fontSize: "2rem",
   })}
 `;
 
@@ -61,6 +67,7 @@ const InnerSection = styled.div`
     alignItems: "flex-start",
     padding: "0 50px",
     width: "90%",
+    margin: "90px 0",
   })}
   ${mobile({
     width: "80%",

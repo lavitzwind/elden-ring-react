@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import axios from "axios";
-import { CastRounded } from "@mui/icons-material";
+import { tablet, mobile } from "../responsive";
 
 const Container = styled.div`
   max-width: 80%;
@@ -12,6 +12,11 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  ${tablet({
+    flexDirection: "column",
+    maxWidth: "90%",
+    textAlign: "center",
+  })}
 `;
 
 const LeftSection = styled.div`
@@ -21,6 +26,9 @@ const LeftSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${tablet({
+    width: "90%",
+  })}
 `;
 
 const ImgContainer = styled.div`
@@ -51,6 +59,10 @@ const RightSection = styled.div`
   color: #fff;
   background-color: #000;
   padding: 0 100px;
+  ${tablet({
+    alignItems: "center",
+    padding: "0px",
+  })}
 
   h1 {
     font-size: 2.5rem;
@@ -72,6 +84,13 @@ const Location = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 70%;
+  ${tablet({
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "0px",
+    width: "90%",
+    flexDirection: "column",
+  })}
 
   h2 {
     display: flex;
@@ -96,6 +115,13 @@ const Drops = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 70%;
+  ${tablet({
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "0px",
+    width: "90%",
+    flexDirection: "column",
+  })}
 
   h2 {
     display: flex;
@@ -128,6 +154,12 @@ const HealthPoints = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 70%;
+  ${tablet({
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "0px",
+    width: "90%",
+  })}
 
   h2 {
     display: flex;
