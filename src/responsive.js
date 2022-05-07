@@ -1,13 +1,5 @@
 import { css } from "styled-components";
 
-export const mobileS = (props) => {
-  return css`
-    @media only screen and (max-width: 377px) {
-      ${props}
-    }
-  `;
-};
-
 export const mobile = (props) => {
   return css`
     @media only screen and (max-width: 426px) {

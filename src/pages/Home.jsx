@@ -168,7 +168,7 @@ const ListItem = styled.li`
       fontSize: "2rem",
     })}
     ${mobile({
-      fontSize: "1.2rem",
+      fontSize: "1.1rem",
     })}
   }
 
