@@ -99,8 +99,6 @@ const Location = () => {
     getLocation();
   }, [id]);
 
-  console.log(locationData);
-
   return (
     <Container>
       <UpperSection>

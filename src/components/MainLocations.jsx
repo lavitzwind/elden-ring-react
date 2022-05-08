@@ -134,8 +134,6 @@ const MainLocations = () => {
     getLocationByIndex(index);
   };
 
-  console.log(locations);
-
   return (
     <Container>
       {loading ? (
