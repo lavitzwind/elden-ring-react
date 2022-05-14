@@ -121,8 +121,10 @@ const MainBosses = () => {
   const getLocationByIndex = async (index) => {
     const URL = `https://eldenring.fanapis.com/api/bosses?&page=${index}`;
     try {
+      setLoading(true);
       const res = await axios.get(URL);
       setBosses(res.data.data);
+      setLoading(false);
     } catch (err) {
       console.log(err);
     }
